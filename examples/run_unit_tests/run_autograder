@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # see what version of g++ we're running
-g++ --version
+#g++ --version
 
 # rename their Makefile so that it doesn't colide with ours
 mv /autograder/submission/Makefile /autograder/submission/Makefile.submission 
@@ -11,11 +11,11 @@ cp /autograder/submission/* /autograder/source/
 cd /autograder/source
 
 # remove any stale binaries that they might have submitted
-make -f Makefile.submission clean
+#make -f Makefile.submission clean
 # compile via their make file
-make -f Makefile.submission
+#make -f Makefile.submission
 # run their executable
-./main
+#./main
 
 
 # using my makefile

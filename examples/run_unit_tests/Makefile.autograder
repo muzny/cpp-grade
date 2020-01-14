@@ -4,7 +4,7 @@ CXXFLAGS	= -std=c++17 -Wall
 all: test
 
 clean:
-	rm test JsonAutograderOutput.o
+	rm test JsonAutograderOutput.o tests-main.o
 
 JsonAutograderOutput.o: JsonAutograderOutput.cpp
 	$(CXX) $(CXXFLAGS) JsonAutograderOutput.cpp -c
