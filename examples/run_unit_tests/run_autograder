@@ -1,32 +1,25 @@
 #! /usr/bin/env bash
 
-# here is how we just run their code and display the results of running their code to std out
-#cd /autograder/source
-#./compile.sh
-#./main
+# see what version of g++ we're running
+g++ --version
 
-# compile the tests
-# examples of 
-# unit tests for things that we can unit test
-
+# rename their Makefile so that it doesn't colide with ours
 mv /autograder/submission/Makefile /autograder/submission/Makefile.submission 
+# copy their submission to the source folder
 cp /autograder/submission/* /autograder/source/
 
 cd /autograder/source
 
-ls
-g++ --version
-
-# make their files
+# remove any stale binaries that they might have submitted
 make -f Makefile.submission clean
+# compile via their make file
 make -f Makefile.submission
+# run their executable
 ./main
-#cat passedjson.json > /autograder/results/results.json
 
 
 # using my makefile
 make -f Makefile.autograder test
-#make clean
-#make test
-./test
+# write output to the correct directory
+./test --json /autograder/results/results.json
 make -f Makefile.autograder clean
