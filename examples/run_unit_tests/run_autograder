@@ -1,0 +1,32 @@
+#! /usr/bin/env bash
+
+# here is how we just run their code and display the results of running their code to std out
+#cd /autograder/source
+#./compile.sh
+#./main
+
+# compile the tests
+# examples of 
+# unit tests for things that we can unit test
+
+mv /autograder/submission/Makefile /autograder/submission/Makefile.submission 
+cp /autograder/submission/* /autograder/source/
+
+cd /autograder/source
+
+ls
+g++ --version
+
+# make their files
+make -f Makefile.submission clean
+make -f Makefile.submission
+./main
+#cat passedjson.json > /autograder/results/results.json
+
+
+# using my makefile
+make -f Makefile.autograder test
+#make clean
+#make test
+./test
+make -f Makefile.autograder clean
