@@ -13,4 +13,4 @@ test-main.o: JsonAutograderOutput.o tests-main.cpp
 	$(CXX) $(CXXFLAGS) tests-main.cpp -c	
 
 test: JsonAutograderOutput.o tests-main.o run-tests.cpp
-	$(CXX) $(CXXFLAGS) JsonAutograderOutput.o tests-main.o run-tests.cpp -o test
+	$(CXX) $(CXXFLAGS) JsonAutograderOutput.o tests-main.o run-tests.cpp -o test -lstdc++fs
