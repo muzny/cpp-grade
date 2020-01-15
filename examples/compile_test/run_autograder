@@ -1,0 +1,25 @@
+#! /usr/bin/env bash
+
+# see what version of g++ we're running
+#g++ --version
+
+# rename their Makefile so that it doesn't colide with ours
+mv /autograder/submission/Makefile /autograder/submission/Makefile.submission 
+# copy their submission to the source folder
+cp /autograder/submission/* /autograder/source/
+
+cd /autograder/source
+
+# remove any stale binaries that they might have submitted
+#make -f Makefile.submission clean
+# compile via their make file
+#make -f Makefile.submission
+# run their executable
+#./main
+
+
+# using my makefile
+make -f Makefile.autograder test
+# write output to the correct directory
+./test --json /autograder/results/results.json
+make -f Makefile.autograder clean
