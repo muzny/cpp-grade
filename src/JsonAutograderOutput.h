@@ -8,6 +8,7 @@ struct TestCase {
   double score;
   std::string output;
   double max_score;
+  std::string visibility; // visible, after_published, after_due_date
 
 };
 

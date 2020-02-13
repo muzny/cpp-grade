@@ -20,6 +20,7 @@ void JsonAutograderOutput::AddTestCase(std::string name, double max_score) {
   tc->score = 0;
   tc->output = "test failed";
   tc->max_score = max_score;
+  tc->visibility = "";
   tests_.push_back(tc);
 }
 
