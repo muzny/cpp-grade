@@ -47,11 +47,15 @@ void JsonAutograderOutput::Write(std::string path) {
     test["score"] = tc->score;
     test["output"] = tc->output;
     test["max_score"] = tc->max_score;
+    // TODO: add test["visibility"] if it has been set
     tests.push_back(test);
   }
 
 
   data["tests"] = tests;
+
+  // TODO: add data["visibilty"]
+  // TODO: add data["stdout_visibilty"]
 
   o << std::setw(4) << data << std::endl;
 }
